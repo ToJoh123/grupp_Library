@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+            /* when small screen flex direction table media query     */
+/*             
+            @media screen and (min-width: 600px) {
+                .canvas-container {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .row {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+                
+            
+            .canvas-container {
+                display: flex;
+                flex-direction: column;
+               
+            }
+            .row {
+                display: flex;
+                flex-direction: row;
+            } */
+            body {
+                margin: 0;
+
+            }
+            .c {
+                border: solid 1px red;
+            }
+		</style>
+	</head>
+	<body>
+        <div class="canvas-container">
+            <div class="row">
+                <canvas id="c1" class="c"></canvas>
+                <canvas id="c2" class="c">
+                    <video id="video" src="assets/telepoorte_fnl.mp4" playsinline autoplay muted loop webkit-playsinline 
+    ></video>
+                </canvas>
+            <div>
+            <div class="row">
+                <canvas id="c3" class="c"></canvas>
+                <canvas id="c4" class="c"></canvas>
+            </div>
+    </div>
+		<script src="https://threejs.org/build/three.js"></script>
+        <script src="js/c1.js"></script>
+        <script src="js/c2.js"></script>
+        <script src="js/c3.js"></script>
+        <script src="js/c4.js"></script>
+	</body>
+</html>
