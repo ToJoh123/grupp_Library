@@ -14,9 +14,15 @@ const background1 = new THREE.TextureLoader().load(
 scene1.background = background1;
 
 //this will add pointLightHelper to the scene
-const pointLightHelper = new THREE.PointLightHelper(pointLight);
-scene1.add(pointLightHelper);
+const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+pointLight.position.set(10, 10, 10);
+scene1.add(pointLight);
+const ambientLight = new THREE.AmbientLight(0x404040);
+scene1.add(ambientLight);
 
+const sphereSize = 2;
+const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
+scene1.add(pointLightHelper);
 //object
 //this code will get the video element from the html
 //and then create a texture from that video
@@ -31,7 +37,7 @@ scene1.add(pointLightHelper);
 
 const video = document.getElementById("video");
 const texture1 = new THREE.VideoTexture(video);
-const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+const material1 = new THREE.MeshStandardMaterial({ map: texture1 });
 const geometry1 = new THREE.BoxGeometry(1, 1, 1);
 const cube1 = new THREE.Mesh(geometry1, material1);
 scene1.add(cube1);
